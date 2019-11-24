@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <title>Auto Shop</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="jumbotron text-center">
+        <h1>Auto Shop HOME PAGE</h1>
+        <% if (locals.message) { %>
+            <div class="alert alert-success"><%= message %></div>
+        <% } %>
+        <form action="/car" method="post" class="carForm">
+          <div class="">
+              <label class="align-left">name:</label>
+              <input type="text" class="form-control" name="name" required>
+          </div>
+          <div class="form-group">
+              <label class="align-left">phone:</label>
+              <input  type="tel" class="form-control" name="phone" required>
+          </div>
+          <div class="form-group">
+              <label class="align-left">Date for vehicle drop off</label>
+              <input type="date" class="form-control" name="date" required>
+          </div>
+          <div class="form-group">
+              <label class="align-left">Notes</label>
+              <input type="textarea" class="form-control" name="msg" required>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-warning btn-lg">Submit Appointment</button>
+          </div>
+        </form>
+    </div>
+    <div>
+      <h2>Are you a manager? please log in</h2>
+      <a class="loginButton" href="/manager">Manager log in</a>
+    </div>
+</div>
+</body>
+</html>
